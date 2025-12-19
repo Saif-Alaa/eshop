@@ -356,7 +356,6 @@
 .category-right img {
   transition: transform 0.4s ease;
 }
-
 .category-right img:hover {
   transform: scale(1.1);
 }
