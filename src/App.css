@@ -1,71 +1,51 @@
-
 .wrapper {
     margin-top: 20px;
     padding: 40px 0;
     width: 80%;
     border-radius: 50px;
     background: linear-gradient(to right, rgb(200,199,199), rgb(222,220,220));
+    color: #000;
 }
+
+.brand{letter-spacing: 1.5px;}
 .subtitle {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 28px;          /* حجم "Beats Solo" */
-    font-weight: 500;         /* متوسط الثقل */
-    color: #000000;
+    font-size: 28px;
+    font-weight: 500;
+    color: #000;
     letter-spacing: 1.2px;
     margin-bottom: 20px;
 }
 
 .title {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 68px;          /* حجم "Wireless" */
-    font-weight: 800;         /* bold قوي */
-    color: #000000;
+    font-size: 68px;
+    font-weight: 800;
+    color: #000;
     letter-spacing: 1.8px;
     margin-bottom: 10px;
-
     line-height: 1;
 }
 
 .title2 {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 130px;         /* حجم ضخم لـ "HEADPHONE" */
-    font-weight: 900;         /* أثقل ما يمكن */
-    color: #ffffff;           /* أبيض */
+    font-size: 130px;
+    font-weight: 900;
+    color: #fff;
     letter-spacing: 3px;
     line-height: 0.9;
     text-transform: uppercase;
-        margin-bottom: 20px;
-    /* الظل الخفيف اللي بيخلي الكلام يبان على الخلفية الرمادي */
+    margin-bottom: 20px;
     text-shadow: 
         2px 2px 4px rgba(0, 0, 0, 0.1),
         4px 4px 10px rgba(0, 0, 0, 0.15);
-
 }
-
-
-@media (max-width: 768px) {
-    .subtitle {
-        margin-bottom: 10px;
-    }
-    
-    .title {
-        font-size: 38px; 
-        margin-bottom: 5px;
-    }
-    
-    .title2 {
-                font-size: 48px; 
-    }
-}
-
-
 .category-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
 }
 
-/* الكارت */
 .category-box {
     display: flex;
     justify-content: space-between;
@@ -76,7 +56,6 @@
     overflow: hidden;
 }
 
-/* النص */
 .category-left .small {
     color: rgba(255,255,255,0.7);
     font-size: 14px;
@@ -95,7 +74,6 @@
     margin-bottom: 20px;
 }
 
-/* الزر */
 .browse-btn {
     border: none;
     padding: 10px 28px;
@@ -105,41 +83,17 @@
     cursor: pointer;
 }
 
-/* الصورة */
 .category-right img {
     width: 180px;
     object-fit: contain;
 }
 
-/* الخلفيات */
-.bg-1 { background: red }
+.bg-1 { background: red; }
 .bg-2 { background: #ffd23f; color: #000; }
-.bg-3 , .inputbg {color: #ffffff; background:linear-gradient(to bottom right, black , rgb(145, 141, 141))}
+.bg-3, .inputbg { color: #fff; background: linear-gradient(to bottom right, black, rgb(145,141,141)); }
 .bg-4 { background: #e5e7eb; color: #000; }
 .bg-5 { background: #38d973; }
 .bg-6 { background: #1f6fff; }
-
-/* responsive */
-@media (max-width: 992px) {
-    .category-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 576px) {
-    .category-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .category-box {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .category-right img {
-        width: 140px;
-    }
-}
 
 .pro-card {
   position: relative;
@@ -162,56 +116,118 @@
 
 .add-btn {
   position: absolute;
-  top: 50%; /* منتصف الصورة */
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, 40px); /* يبدأ تحت النص النهائي */
+  transform: translate(-50%, 40px);
   opacity: 0;
   transition: all 0.4s ease;
   pointer-events: none;
 }
 
 .pro-img-wrapper:hover .add-btn {
-  transform: translate(-50%, -50%); /* يصل لنص الصورة */
+  transform: translate(-50%, -50%);
   opacity: 1;
   pointer-events: auto;
 }
 
-/* تابلت */
+.feature-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+.feature-item {
+  flex: 1 1 22%;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+}
+
+
 @media (max-width: 992px) {
-  .pro-card h5 {
-    font-size: 18px;
-  }
-
-  .pro-card p {
-    font-size: 15px;
-  }
-
-  .pro-img {
-    max-width: 85%;
-  }
+    .category-grid { grid-template-columns: repeat(2, 1fr); }
+    .category-box { flex-direction: column; align-items: center; text-align: center; padding: 25px; }
+    .category-left h2 { font-size: 36px; }
+    .category-left h5 { font-size: 18px; }
+    .category-left .small { font-size: 12px; }
+    .category-right img { width: 140px; margin-top: 15px; }
+    .browse-btn { padding: 8px 20px; font-size: 12px; margin-top: 10px; }
+    .pro-card h5 { font-size: 18px; }
+    .pro-card p { font-size: 15px; }
+    .pro-img { max-width: 85%; }
 }
 
-/* موبايل */
 @media (max-width: 576px) {
-  .pro-card h5 {
-    font-size: 16px;
-  }
-
-  .pro-card p {
-    font-size: 14px;
-  }
-
-  .pro-img {
-    max-width: 70%;
-  }
-
-  .add-btn {
-    font-size: 14px;
-    padding: 6px 14px;
-  }
+    .category-grid { grid-template-columns: 1fr; }
+    .category-left h2 { font-size: 28px; }
+    .category-left h5 { font-size: 16px; }
+    .category-left .small { font-size: 10px; }
+    .category-right img { width: 120px; }
+    .browse-btn { padding: 6px 16px; font-size: 11px; }
+    .pro-card h5 { font-size: 16px; }
+    .pro-card p { font-size: 14px; }
+    .pro-img { max-width: 70%; }
+    .add-btn { font-size: 14px; padding: 6px 14px; }
+    .feature-container { flex-direction: column; align-items: center; }
+    .feature-item { flex-direction: column; align-items: center; text-align: center; width: 100%; max-width: 400px; gap: 10px; }
 }
 
 
-.icon:hover {
-    color: #dc3545 !important;
+.icon:hover{color: red !important;}
+
+
+/* ----------- Dark Mode ----------- */
+.dark-mode {
+  background-color: #121212 !important;
+  color: #fff !important;
+}
+
+.dark-mode .card {
+    background-color: #1e1e1e !important;
+    color: #fff !important;
+}
+
+.dark-mode .card h5,
+.dark-mode .card p {
+    color: #fff !important;
+}
+
+.dark-mode .wrapper,
+.dark-mode ,
+.dark-mode .pro-card,
+.dark-mode .feature-item {
+  background-color: #1e1e1e !important;
+  color: #fff !important;
+}
+
+.dark-mode .category-left h2,
+.dark-mode .category-left h5,
+.dark-mode .category-left .small,
+.dark-mode h1, .dark-mode h2, .dark-mode h3,
+.dark-mode h4, .dark-mode h5, .dark-mode h6,
+.dark-mode p,
+.dark-mode a .dark-mode,
+.dark-mode .btn,
+.dark-mode .dropdown-item {
+  color: #fff !important;
+}
+
+.dark-mode .btn-outline-secondary {
+  border-color: #fff;
+  color: #fff;
+}
+
+.dark-mode .btn-outline-secondary:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.dark-mode .category-right img,
+.dark-mode .pro-img {
+  filter: brightness(0.9);
 }

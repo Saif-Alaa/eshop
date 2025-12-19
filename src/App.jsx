@@ -5,24 +5,25 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Navbar from './components/navbar/navbar';
 import Hero from './components/Hero/Hero';
-import Category from './components/Category/category'
-import Feature from './components/Feature/feature'
-import Product from'./components/Products//products'
-import Footer from './components/Footer/Footer'
-import News from './components/News/New'
-function App() {
+import Category from './components/Category/category';
+import Feature from './components/Feature/feature';
+import Product from './components/Products/products';
+import Footer from './components/Footer/Footer';
+import News from './components/News/New';
 
+function App() {
+  const [darkMode, setDarkMode] = useState(false); 
 
   return (
-    <div>
-   <Navbar/>
-   <Hero/>
-   <Category/>
-   <Feature/>
-   <Product/>
-   <News/>
-   <Footer/>
-  </div>
+    <div className={darkMode ? 'dark-mode' : ''}>
+      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Hero />
+      <Category />
+      <Feature />
+      <Product />
+      <News />
+      <Footer />
+    </div>
   );
 }
 

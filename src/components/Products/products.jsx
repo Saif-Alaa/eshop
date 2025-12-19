@@ -58,11 +58,11 @@ const product =
 const products = () => {
   return(
 
-   <div className="container py-5">
+   <div className="container text-center">
        <div className='text-center m-5'>
            <h1 className='fw-bold'>Best Seller Products</h1>
        </div>
-  <div className="row g-4">
+  <div className="row ">
 
     {product.map(item => (
       <div key={item.id} className="col-lg-4 col-md-6 col-12">

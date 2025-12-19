@@ -17,11 +17,10 @@ const dropdownItems = [
   { id: 3, name: "Top Rated", link: "/#top-rated" }
 ];
 
-
-function navbar() {
-      const [showSearch, setShowSearch] = useState(false);
+function Navbar({ darkMode, setDarkMode }) {
+  const [showSearch, setShowSearch] = useState(false);
   const [cartCount, setCartCount] = useState(0);
-  const [darkMode, setDarkMode] = useState(false);
+
   return (
    <nav className={`navbar navbar-expand-lg ${darkMode ? 'navbar-dark bg-dark' : 'navbar-light bg-light'}`}>
       <a className="navbar-brand p-3 fs-2 text-danger fw-bold brand"  href="#">Ecommerce </a>
@@ -94,15 +93,15 @@ function navbar() {
           </button>
         </div>
 
-        <button
-          className="btn btn-outline-secondary ms-2"
-          onClick={() => setDarkMode(!darkMode)}
-        >
-          {darkMode ? <i className="bi bi-moon-fill"></i> : <i className="bi bi-sun-fill"></i>}
-        </button>
+           <button
+        className="btn btn-outline-secondary ms-2"
+        onClick={() => setDarkMode(!darkMode)}
+      >
+        {darkMode ? <i className="bi bi-moon-fill"></i> : <i className="bi bi-sun-fill"></i>}
+      </button>
       </div>
     </nav>
   )
 }
 
-export default navbar
+export default Navbar

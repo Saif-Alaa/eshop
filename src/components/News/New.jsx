@@ -42,7 +42,7 @@ const New = () => {
                 <img src={item.img} alt={item.title} className="w-100 h-100" style={{objectFit: 'cover'}} />
               </div>
 
-              <div className="p-3">
+              <div className="p-3 new-p">
                 <h5 className="mt-2">{item.title}</h5>
                 <p className="text-secondary">{item.desc}</p>
               </div>
