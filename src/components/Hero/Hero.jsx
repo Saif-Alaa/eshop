@@ -1,42 +1,21 @@
 import React, { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import { Carousel as BootstrapCarousel } from 'bootstrap'; 
 import img1 from '/Imgs/headphone-M8ndZJ0u.png';
 import img2 from '/Imgs/vr-4ibBMPK9.png';
 import img3 from '/Imgs/macbook-MZGIbM5F.png';
 
 const slides = [
-  {
-    id: 1,
-    img: img1,
-    subtitle: "Beats Solo",
-    title: "Wireless",
-    title2: "Headphones",
-    description: "The tree dances under sky while river sings soft music, clouds float above mountains, fire warms stones, and birds fly high."
-  },
-  {
-    id: 2,
-    img: img2,
-    subtitle: "Beats Solo",
-    title: "Winter Sale",
-    title2: "VIRTUAL",
-    description: "The tree dances under sky while river sings soft music, clouds float above mountains, fire warms stones, and birds fly high."
-  },
-  {
-    id: 3,
-    img: img3,
-    subtitle: "Beats Solo",
-    title: "Branded",
-    title2: "LAPTOPS",
-    description: "The tree dances under sky while river sings soft music, clouds float above mountains, fire warms stones, and birds fly high."
-  }
+  { id: 1, img: img1, subtitle: "Beats Solo", title: "Wireless", title2: "Headphones" },
+  { id: 2, img: img2, subtitle: "Beats Solo", title: "Winter Sale", title2: "VIRTUAL" },
+  { id: 3, img: img3, subtitle: "Beats Solo", title: "Branded", title2: "LAPTOPS" }
 ];
 
 function Hero() {
   useEffect(() => {
     const carouselEl = document.querySelector('#carouselExampleIndicators');
     if (carouselEl) {
-      new window.bootstrap.Carousel(carouselEl, {
+      new BootstrapCarousel(carouselEl, {
         interval: 4000,
         pause: 'hover'
       });
